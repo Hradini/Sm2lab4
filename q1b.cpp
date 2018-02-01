@@ -53,7 +53,7 @@ int main(){
     while(1)//makes a menu
     {
         cout<<"\n-----------------------------------------------------------";
-        cout<<"\n\t\tSTACK USING LINKED LIST\n\n";
+        cout<<"\n\t\tQUEUE USING LINKED LIST\n\n";
         cout<<"1:Queue\n2:Dequeue\n3:DISPLAY STACK\n4:EXIT";
         cout<<"\nEnter your choice(1-4): ";
         cin>>choice;
