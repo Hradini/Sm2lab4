@@ -51,7 +51,7 @@ int main(){
     while(1)
     {
         cout<<"\n-----------------------------------------------------------";
-        cout<<"\n\t\tSTACK USING LINKED LIST\n\n";
+        cout<<"\n\t\tSTACK USING ARRAY\n\n";
         cout<<"1:PUSH\n2:POP\n3:DISPLAY STACK\n4:EXIT";
         cout<<"\nEnter your choice(1-4): ";
         cin>>choice;
