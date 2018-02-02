@@ -15,7 +15,14 @@ class StackLL{
 		void push(int data);
 		void pop();
 		void display();
+		bool isEmpty();
 };
+bool StackLL::isEmpty(){
+	if(top==NULL)
+		return 1;
+	else
+		return 0;
+}
 void StackLL::push(int data){//adds new node to top of stack
 	node *temp = new node;
 	temp->data = data;
