@@ -1,30 +1,22 @@
 #include <iostream>
 using namespace std;
 
-struct node{
+struct node{//creates node type structure
 	int data;
 	node *next;
 };
 class StackLL{
-	
 	public:
 		node *top;
-		StackLL(){
-		top=NULL;
+		StackLL(){//default constructor
+			top=NULL;
 		}
+	//functions
 		void push(int data);
 		void pop();
 		void display();
-		bool isEmpty();
 };
-bool StackLL::isEmpty(){
-	if(top==NULL)
-		return 1;
-	else
-		return 0;
-}
-
-void StackLL::push(int data){
+void StackLL::push(int data){//adds new node to top of stack
 	node *temp = new node;
 	temp->data = data;
 	temp->next = NULL;
@@ -33,7 +25,7 @@ void StackLL::push(int data){
 	}
 	top = temp;
 }
-void StackLL::pop(){
+void StackLL::pop(){//removes data from top of stack
 	node *temp;
 	temp=top;
 	if(temp==NULL){
@@ -43,7 +35,7 @@ void StackLL::pop(){
 		delete temp;
 	}
 }
-void StackLL::display(){
+void StackLL::display(){ //diplays all elements of the stack from top to bottom
 	node*temp;
 	temp=top;
 	while(temp!=NULL){
@@ -51,43 +43,44 @@ void StackLL::display(){
 	temp=temp->next;
 	}
 }
-class QueueS{
+class QueueS{ //creates a queue structure
 	public:
-		StackLL S1, S2;
+		StackLL S1, S2; //creates 2 stacks
+	//functions	
 		void enqueue(int data);
 		void dequeue();
 		void display();
 };
 
-void QueueS::enqueue(int data){
-	S1.push(data);
+void QueueS::enqueue(int data){//adds data to the queue at the rear
+	S1.push(data);//adds data to stack 1
 }
 
-void QueueS::dequeue(){
-	if(S1.isEmpty()){
+void QueueS::dequeue(){//removes data from front of queue
+	if(S1.isEmpty()){ //checks if queue is empty or not
 		cout<<"Queue is empty";
 	}else{
-		while((S1.top)!= NULL){
+		while((S1.top)!= NULL){ //moves data from stack 1 to stack 2 so that last elememt becomes first element
 			S2.push((S1.top)->data);
 			(S1.top)=(S1.top)->next;
 		}
-		S2.pop();
-		while((S2.top) != NULL){
+		S2.pop(); //removes first element of stack 2
+		while((S2.top) != NULL){ //moves data from stack 2 to stack 1 so that last element becomes first element
 			S1.push((S2.top)->data);
 		}
 	}
 }
 
-void QueueS::display(){
+void QueueS::display(){//displays all the elements of the queue - first in first to be displayed
 	if(S1.isEmpty()){
 		cout<<"Queue is empty";
 	}else{
-		while((S1.top)!= NULL){
+		while((S1.top)!= NULL){//moves data from stack 1 to stack 2 so that last elememt becomes first element
 			S2.push((S1.top)->data);
 			(S1.top)=(S1.top)->next;
 		}
-		S2.display();
-		while((S2.top) != NULL){
+		S2.display();//displays elements of the stack 2
+		while((S2.top) != NULL){//moves data from stack 2 to stack 1 so that last element becomes first element
 			S1.push((S2.top)->data);
 		}
 	}
