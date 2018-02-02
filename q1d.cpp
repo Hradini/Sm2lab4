@@ -4,7 +4,7 @@ using namespace std;
 int queue[20];//creates an array
 int front=rear=0;
 
-void queue(int data){ //adds elements at the rear
+void enqueue(int data){ //adds elements at the rear
 	if (rear == 20)
     	cout << "\nQueue Reached Max!!";
     else 
@@ -20,7 +20,7 @@ void dequeue(){	//removes elements from front of queue
 
 void display(){//displays elements from front till rear
 	int i=0;
-	for(i=front;i<=rear;++i){
+	for(i=front;i<rear;++i){
 		cout<<queue[i];
 	}
 }
@@ -41,7 +41,7 @@ int main(){
             case 1:
             	cout << "Enter the number to push:";
             	cin >> x;
-                queue(x);
+                enqueue(x);
                 break;
             case 2:
                 dequeue();
