@@ -1,22 +1,22 @@
 #include <iostream>
 using namespace std;
 
-struct node{
+struct node{ //creates node type srtucture
 	int data;
 	node *next;
 };
 class StackLL{
 	node *top;
-	
 public:
-	StackLL(){
+	StackLL(){//default constructor
 	top=NULL;
 	}
+	//functions
 	void push(int data);
 	void pop();
 	void display();
 };
-void StackLL::push(int data){
+void StackLL::push(int data){ //adds new node to top of the stack
 	node *temp = new node;
 	temp->data = data;
 	temp->next = NULL;
@@ -25,7 +25,7 @@ void StackLL::push(int data){
 	}
 	top = temp;
 }
-void StackLL::pop(){
+void StackLL::pop(){//removes node from top of the stack
 	node *temp;
 	temp=top;
 	if(temp==NULL){
@@ -36,7 +36,7 @@ void StackLL::pop(){
 	}
 }
 
-void StackLL::display(){
+void StackLL::display(){ //displays all the elements of the stack
 	node*temp;
 	temp=top;
 	while(temp!=NULL){
@@ -50,6 +50,7 @@ int main(){
 StackLL s;
     int choice;
     int x;
+//makes a menu
     while(1)
     {
         cout<<"\n-----------------------------------------------------------";
